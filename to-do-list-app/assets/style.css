@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #0c1b30;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.inputTask {
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    padding: 10px 0;
+}
+
+.inputTask>input[type="text"] {
+    width: 90%;
+    color: #93a4dd;
+    border: none;
+    border-bottom: 2px solid #cacaca;
+    background: none;
+    font-size: 22px;
+    outline: none;
+}
+
+.inputTask button {
+    margin: 0 10px;
+    background: #333;
+    color: #cacaca;
+    font-size: 15px;
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inputTask button:hover {
+    background: rgb(83, 82, 82);
+}
+
+.notCompleted,
+.Completed {
+    margin: 5px 0;
+    padding: 20px;
+}
+
+h2 {
+    letter-spacing: 1px;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+}
+
+ol {
+    list-style: none;
+    counter-reset: counterKU;
+}
+
+ol li {
+    width: 100%;
+    padding: 18px;
+    margin: 5px 0;
+    background: #c03737;
+    font-size: 22px;
+    counter-increment: counterKU;
+}
+
+ol.Completed li {
+    background: #37c042;
+}
+
+ol li::before {
+    content: counter(counterKU);
+    background: #93a4dd;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    color: #463e3e;
+    margin-right: 8px;
+}
+
+li button {
+    color: #cacaca;
+    float: right;
+    padding: 5px;
+    font-size: 20px;
+    line-height: 20px;
+    margin-right: 15px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button i.fa-check:hover {
+    color: #59ec60;
+}
+
+button i.fa-trash:hover {
+    color: #eb6d6d;
+}
