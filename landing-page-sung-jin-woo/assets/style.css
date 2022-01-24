@@ -1,0 +1,1373 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;600;700&family=Montserrat:wght@100;300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  font-family: 'Poppins', sans-serif;
+}
+
+footer {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* === BAGIAN NAVIGASI MENU STYLING ==== */
+#nav {
+  z-index: 100;
+  background: #040912;
+  position: fixed;
+  transition: top 0.3s;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 65px;
+  width: 100%;
+}
+
+.logo h4 {
+  font-weight: 100;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #8b0bbf;
+  font-weight: 600;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list li {
+  list-style: none;
+  padding: 0 10px;
+  display: inline-flex;
+}
+
+.nav-list li a {
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: 'Darker Grotesque', sans-serif;
+  color: #b9b6b5;
+}
+
+.nav-list li a:hover {
+  color: #fff;
+}
+
+.nav-line {
+  position: relative;
+  line-height: 65px;
+  transition-delay: .5s;
+}
+
+.nav-line::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #4634ff;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 650ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-line:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* === BAGIAN HAMBURGER MENU STYLING === */
+.hamburger {
+  display: none;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  line-height: 60px;
+  z-index: 1500;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  display: block;
+  right: 0;
+  transition: all 650ms;
+}
+
+.hamburger .line:nth-child(1) {
+  top: 0;
+}
+
+.hamburger .line:nth-child(2) {
+  top: 50%;
+  margin-top: -1px;
+  width: 20px;
+}
+
+.hamburger .line:nth-child(3) {
+  top: 100%;
+  margin-top: -2px;
+  width: 30px;
+}
+
+.hamburger.active .line {
+  background-color: #8b0bbf;
+}
+
+.hamburger.active .line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+  width: 20px;
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+  width: 20px;
+}
+
+/* === BAGIAN STYLING SAMA === */
+.about,
+.appearance,
+.personality,
+.ability {
+  padding: 90px 0px;
+}
+
+.about .title,
+.appearance .title,
+.personality .title,
+.ability .title {
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+}
+
+.about .title::before,
+.appearance .title::before,
+.personality .title::before,
+.ability .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  height: 2px;
+  background: #8b0bbf;
+  transform: translateX(-50%);
+}
+
+/* === BAGIAN LINE TRANSITION === */
+.line-about {
+  left: 50%;
+  width: 400px;
+  margin: 105px 0px;
+  background: #4634ff;
+  height: 3px;
+  position: relative;
+  top: 365px;
+  transform: translate(-50%);
+}
+
+.line-about figure img {
+  height: 100px;
+  position: absolute;
+  bottom: -25px;
+  left: 80px;
+}
+
+.line-appearance1 {
+  z-index: 1;
+  left: 370px;
+  width: 615px;
+  background: #fff;
+  height: 3px;
+  position: relative;
+  bottom: 190px;
+}
+
+.line-personality {
+  z-index: 1;
+  width: 850px;
+  height: 3px;
+  background: #040912;
+  position: relative;
+}
+
+.line-personality.one {
+  bottom: 35px;
+  right: -248px;
+}
+
+.line-personality.two {
+  bottom: -35px;
+  left: -248px;
+}
+
+.main-line-ability {
+  height: 624vh;
+  width: 4px;
+  background: #ffffff;
+  margin-left: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+/* === BAGIAN HOME STYLING === */
+.home {
+  display: flex;
+  background: url(../images/image-bg/bg-home.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative;
+}
+
+.intro {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  margin: 240px 0px 0px 70px;
+}
+
+.intro h1 {
+  font-size: 80px;
+  color: #13031c;
+  text-shadow: 0px 3px 10px #8ccdf6;
+}
+
+.intro h2 {
+  font-family: 'Darker Grotesque', sans-serif;
+  text-shadow: 0px 3px 5px #8ccdf6;
+  color: #fff;
+  font-size: 50px;
+}
+
+.txt-type {
+  color: #10073b;
+}
+
+/* Cursor Typing */
+.txt-type>.txt {
+  border-right: 5px solid #8b0bbf;
+}
+
+/* === BAGIAN HOME CLOUDS === */
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.clouds img {
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+  animation: animate calc(5s * var(--i)) linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-100%);
+  }
+
+  100% {
+    transform: translate(100%);
+  }
+}
+
+/* === BAGIAN ABOUT STYLING === */
+.about .title {
+  color: #040912;
+}
+
+.about .title::before {
+  width: 50px;
+}
+
+.content-about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.column-left,
+.column-right {
+  position: absolute;
+}
+
+.column-left {
+  margin: 500px 500px 0px 150px;
+  padding: 60px 50px;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 2px 10px 30px rgba(65, 62, 62, 0.5);
+}
+
+.column-left h4 {
+  color: #4634ff;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.column-left span {
+  color: #8b0bbf;
+}
+
+.column-left p {
+  font-size: 15px;
+  text-align: justify;
+}
+
+.column-right {
+  right: 150px;
+  top: 400px;
+  z-index: 1;
+  padding: 30px 100px;
+  margin: 450px 20px 20px 40px;
+  background: rgba(110, 105, 105, 0.15);
+}
+
+.column-right img {
+  width: 250px;
+}
+
+/* === BAGIAN APPEARANCE STYLING === */
+.appearance {
+  background: #300930;
+  margin-top: 400px;
+  min-height: 125vh
+}
+
+.appearance .title {
+  color: #ffffff;
+}
+
+.appearance .title::before {
+  width: 140px;
+}
+
+.content-appearance {
+  position: relative;
+  margin-top: 40px;
+  background-image: url(../images/image-bg/bg2.jpg);
+  background-size: cover;
+  border-radius: 50% 20px;
+  background-position: center;
+  height: 500px;
+  width: 100%;
+}
+
+.text-center-appearance,
+.before-jin,
+.after-jin {
+  position: absolute;
+}
+
+.text-center-appearance {
+  z-index: 1;
+  margin: 0px 200px;
+  bottom: -70px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 570px;
+  background: rgba(51, 2, 80, 0.61);
+}
+
+.text-center-appearance .text-before {
+  text-align: left;
+  margin-left: 160px;
+  padding: 60px 0px;
+}
+
+.text-center-appearance .text-after {
+  text-align: right;
+  margin-right: 160px;
+  padding: 60px 0px;
+}
+
+.text-before h4,
+.text-after h4 {
+  font-family: 'Darker Grotesque', sans-serif;
+  font-weight: 400;
+  font-size: 35px;
+  color: #695cf7;
+}
+
+.before-jin {
+  z-index: 2;
+  left: 90px;
+  top: -40px;
+}
+
+.after-jin {
+  z-index: 2;
+  right: 90px;
+  bottom: -100px;
+}
+
+.content-appearance img {
+  border-radius: 10px;
+  width: 250px;
+  height: 350px;
+  box-shadow: 2px 5px 10px rgba(255, 246, 246, 0.5);
+}
+
+/* === BAGIAN PERSONALITY STYLING === */
+.personality {
+  min-height: 100vh;
+}
+
+.personality .title {
+  color: #040912;
+}
+
+.personality .title::before {
+  width: 160px;
+}
+
+.content-personality {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.content-personality .card-personality {
+  cursor: pointer;
+  position: relative;
+  max-width: 230px;
+  height: 210px;
+  background: #fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  flex-direction: column;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.card-personality.center {
+  box-shadow: 0 3px 20px rgba(219, 0, 255, 0.5);
+}
+
+.content-personality .card-personality:hover {
+  height: 320px;
+}
+
+.content-personality .card-personality .imgbox-personality {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.imgbox-personality.left {
+  top: -60px;
+  left: -25px;
+}
+
+.imgbox-personality.center {
+  top: -60px;
+}
+
+.imgbox-personality.right {
+  top: -60px;
+  left: 25px;
+}
+
+.imgbox-personality img {
+  width: 150px;
+  border-radius: 5px;
+  height: 210px;
+}
+
+.content-personality .card-personality .card-text-personality {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.content-personality .card-personality:hover .card-text-personality {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -55px;
+  transition: 0.3s ease-in-out;
+}
+
+.content-personality .card-personality:hover .card-text-personality.left {
+  margin-top: -35px;
+}
+
+.card-personality h4 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.card-personality p {
+  font-size: 11px;
+  text-align: justify;
+}
+
+.content-text-personality span {
+  color: #695cf7;
+  font-weight: 600;
+}
+
+.content-left-personality {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  margin: 0px 70px;
+  align-items: center;
+}
+
+.content-left-personality .content-text-personality {
+  margin-left: 30px;
+}
+
+.content-center-personality {
+  width: 100%;
+  height: 53vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #0b122e;
+  color: #ffffff;
+}
+
+.content-center-personality .content-text-personality {
+  font-size: 15px;
+}
+
+.content-text-personality.left p {
+  text-align: right;
+}
+
+.content-right-personality {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  margin: 0px 70px;
+  align-items: center;
+}
+
+.content-right-personality .content-text-personality {
+  margin-right: 30px;
+  text-align: right;
+}
+
+/* === BAGIAN ABILITY STYLING === */
+.ability {
+  min-height: 100vh;
+  background: #06132a;
+}
+
+.ability .title {
+  color: #ffffff;
+}
+
+.ability .title::before {
+  width: 75px;
+}
+
+.content-ability {
+  color: #ffffff;
+}
+
+.content-skills {
+  display: flex;
+  margin: 50px;
+}
+
+.title-skills {
+  margin-left: 120px;
+  margin-right: 20%;
+  position: relative;
+}
+
+.title-skills::before {
+  content: "";
+  position: absolute;
+  border-top: 4px solid #ffffff;
+  border-right: 4px solid #ffffff;
+  padding: 30px 112px;
+  border-radius: 20px 50px 0px 0px;
+  top: 65px;
+  left: 100%;
+}
+
+h3.title-skills {
+  letter-spacing: 5px;
+  font-family: 'Darker Grotesque', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 90px;
+  text-shadow: 2px 5px 20px #f80aff;
+}
+
+.sub-skills {
+  margin-top: 200px;
+}
+
+.title-sub-skills {
+  position: relative;
+}
+
+.title-sub-skills::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 3px;
+  background: #1768fb;
+  top: 10px;
+  left: -20px;
+}
+
+h4.title-sub-skills {
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.sub-skills li {
+  padding: 3px;
+  margin-left: 50px;
+}
+
+.content-shadow-monarch {
+  display: flex;
+  margin: 50px;
+}
+
+.title-shadow-monarch {
+  margin-right: 90px;
+  margin-left: 20%;
+  position: relative;
+}
+
+.title-shadow-monarch::before {
+  content: "";
+  position: absolute;
+  border-top: 4px solid #ffffff;
+  border-left: 4px solid #ffffff;
+  padding: 30px 112px;
+  border-radius: 50px 20px 0px 0px;
+  top: 75px;
+  right: 97%;
+}
+
+h3.title-shadow-monarch {
+  letter-spacing: 5px;
+  font-family: 'Darker Grotesque', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 70px;
+  text-shadow: 2px 5px 20px #f80aff;
+}
+
+.sub-shadow-monarch {
+  margin-top: 200px;
+}
+
+.sub-shadow-monarch ul li {
+  text-align: right;
+  padding: 5px 0px 10px 0px;
+  list-style: none;
+}
+
+.title-sub-shadow-monarch {
+  position: relative;
+}
+
+.title-sub-shadow-monarch::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 3px;
+  background: #1768fb;
+  top: 10px;
+  left: -20px;
+}
+
+b.title-sub-shadow-monarch {
+  margin-left: 100px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.content-titles {
+  display: flex;
+  margin: 50px;
+}
+
+.title-titles {
+  margin-left: 120px;
+  margin-right: 20%;
+  position: relative;
+}
+
+.title-titles::before {
+  content: "";
+  position: absolute;
+  border-top: 4px solid #ffffff;
+  border-right: 4px solid #ffffff;
+  padding: 30px 112px;
+  border-radius: 20px 50px 0px 0px;
+  top: 65px;
+  left: 106%;
+}
+
+h3.title-titles {
+  letter-spacing: 5px;
+  font-family: 'Darker Grotesque', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 90px;
+  text-shadow: 2px 5px 20px #f80aff;
+}
+
+.content-titles ul li {
+  margin-left: 50px;
+  list-style: none;
+  padding: 5px 0px 10px 0px;
+}
+
+.sub-titles {
+  margin-top: 200px;
+}
+
+.title-sub-titles {
+  position: relative;
+}
+
+.title-sub-titles::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 3px;
+  background: #1768fb;
+  top: 10px;
+  left: -20px;
+}
+
+b.title-sub-titles {
+  margin-left: 12px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.content-shadow-soldiers {
+  display: flex;
+  margin: 50px;
+}
+
+.title-shadow-soldiers {
+  margin-right: -10px;
+  margin-left: 20%;
+  position: relative;
+}
+
+.title-shadow-soldiers::before {
+  content: "";
+  position: absolute;
+  border-top: 4px solid #ffffff;
+  border-left: 4px solid #ffffff;
+  padding: 30px 112px;
+  border-radius: 50px 20px 0px 0px;
+  top: 75px;
+  right: 97%;
+}
+
+h3.title-shadow-soldiers {
+  letter-spacing: 5px;
+  font-family: 'Darker Grotesque', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 70px;
+  text-shadow: 2px 5px 20px #f80aff;
+}
+
+.sub-shadow-soldiers {
+  margin-top: 200px;
+}
+
+.sub-shadow-soldiers ul li {
+  text-align: right;
+  margin: 10px 0px;
+}
+
+.sub-shadow-soldiers ul li span.blur-shadow-soldiers {
+  filter: blur(5px);
+}
+
+.sub-shadow-soldiers ul li span.blur-shadow-soldiers:hover {
+  filter: blur(0px);
+  transition: 0.5s;
+}
+
+sup,
+small,
+a,
+b {
+  margin-top: -8px;
+}
+
+sup small a b {
+  text-decoration: none;
+  font-size: 9px;
+  color: #f28c15;
+}
+
+/* === BAGIAN FOOTER STYLING === */
+.bottom center {
+  padding: 5px;
+  font-size: 13px;
+  background: #f0f4ff;
+}
+
+.bottom center span {
+  color: #09162f;
+}
+
+.bottom center a {
+  color: #0077ff;
+  text-decoration: none;
+}
+
+.bottom center a:hover {
+  text-decoration: underline;
+}
+
+/* ===== BAGIAN RESPONSIVE STYLING MX-WIDTH 1200PX ===== */
+@media screen and (min-width: 1200px) {
+  .line-transition-personality-res-center {
+    display: none;
+  }
+
+  .line-personality-res-up figure img {
+    display: none;
+  }
+
+  .line-personality-res-down figure img {
+    display: none;
+  }
+}
+
+/* ===== BAGIAN RESPONSIVE STYLING MX-WIDTH 950PX ===== */
+@media screen and (max-width: 950px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 999;
+  }
+
+  .nav-list {
+    width: 70%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #040912;
+    position: fixed;
+    left: 0;
+    bottom: -100vh;
+    transition: bottom 650ms;
+  }
+
+  .nav-list.show {
+    bottom: 0;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  /* === BAGIAN HOME RESPONSIVE === */
+  .intro {
+    justify-content: center;
+    margin: 0px 50px;
+  }
+
+  .intro h1 {
+    font-size: 60px;
+  }
+
+  .intro h2 {
+    font-size: 40px;
+  }
+
+  /* === BAGIAN LINE TRANSITION RESPONSIVE === */
+  .line-about {
+    top: 0px;
+    margin-top: 100px;
+  }
+
+  .line-appearance1 {
+    bottom: 160px;
+    left: 0;
+    width: 800px;
+  }
+
+  .line-transition-personality-res-center {
+    width: 65px;
+    height: 3px;
+    background: #4634ff;
+    position: absolute;
+    z-index: 1;
+    margin-top: 35px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%, -50%);
+  }
+
+  .line-transition-personality-res-center figure img {
+    width: 80px;
+    z-index: 2;
+    position: relative;
+    bottom: 84px;
+    right: 5px;
+  }
+
+  .line-personality-res-up figure img {
+    display: none;
+  }
+
+  .line-personality-res-down figure img {
+    display: none;
+  }
+
+  .main-line-ability {
+    height: 676vh;
+  }
+
+  /* === BAGIAN ABOUT RESPONSIVE === */
+  .content-about {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column-left {
+    position: relative;
+    z-index: 0;
+    padding: 50px 20px 0px 20px;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .column-left h4 {
+    font-size: 25px;
+  }
+
+  .column-left span {
+    font-size: 15px
+  }
+
+  .column-right {
+    top: 0;
+    right: 0;
+    position: relative;
+    z-index: 0;
+    padding: 0;
+    margin: 20px 0px;
+  }
+
+  /* === BAGIAN APPEARANCE RESPONSIVE === */
+  .appearance {
+    flex-direction: column;
+    display: flex;
+    margin-top: 0px;
+    min-height: 105vh
+  }
+
+  .text-center-appearance {
+    margin: 0;
+    font-size: 13px;
+    z-index: 0;
+    top: 10px;
+    height: 650px;
+  }
+
+  .text-center-appearance .text-before {
+    text-align: left;
+    margin-left: 20px;
+    padding: 130px 0px;
+  }
+
+  .text-center-appearance .text-after {
+    text-align: right;
+    margin-right: 20px;
+    padding: 130px 0px;
+  }
+
+  .before-jin {
+    left: 20px;
+    top: 230px;
+  }
+
+  .after-jin {
+    right: 20px;
+    bottom: 62px;
+  }
+
+  .content-appearance img {
+    width: 130px;
+    height: 200px;
+  }
+
+  .text-before h4,
+  .text-after h4 {
+    font-size: 30px;
+  }
+
+  /* === BAGIAN PERSONALITY RESPONSIVE === */
+  .content-text-personality,
+  .content-text-personality.left,
+  .content-text-personality.right {
+    font-size: 15px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .content-left-personality {
+    padding: 0;
+    margin: 20px;
+  }
+
+  .content-left-personality .content-text-personality {
+    text-align: justify;
+  }
+
+  .content-center-personality {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+  }
+
+  .card-personality.center {
+    display: none;
+  }
+
+  .content-center-personality,
+  .content-text-personality.left p,
+  .content-text-personality.right p {
+    font-size: 15px;
+    padding: 0px 10px 0px 10px;
+  }
+
+  .content-right-personality {
+    padding: 0;
+    margin: 20px;
+  }
+
+  .content-right-personality .content-text-personality {
+    text-align: justify;
+  }
+
+  /* === BAGIAN ABILITY RESPONSIVE === */
+  .title-skills,
+  .title-titles {
+    margin-left: 81px;
+    margin-right: 22%;
+  }
+
+  .title-skills::before,
+  .title-titles::before {
+    top: 30px;
+    padding: 30px 80px;
+  }
+
+  .title-shadow-monarch,
+  .title-shadow-soldiers {
+    margin-right: 15px;
+    margin-left: 22%;
+  }
+
+  .title-shadow-monarch::before,
+  .title-shadow-soldiers::before {
+    top: 50px;
+    padding: 30px 80px;
+  }
+
+  h3.title-skills,
+  h3.title-shadow-monarch,
+  h3.title-titles,
+  h3.title-shadow-soldiers {
+    font-size: 50px;
+  }
+
+  .content-skills,
+  .content-shadow-monarch,
+  .content-titles,
+  .content-shadow-soldiers {
+    margin: 20px;
+  }
+
+  h4.title-sub-skills,
+  b.title-sub-shadow-monarch,
+  b.title-sub-titles {
+    font-size: 18px;
+  }
+
+  .title-sub-skills,
+  .title-sub-shadow-monarch,
+  .title-sub-titles,
+  .title-sub-shadow-soldiers,
+  ul li {
+    font-size: 14px;
+  }
+}
+/* ===== BAGIAN RESPONSIVE STYLING MX-WIDTH 700PX ===== */
+@media screen and (max-width: 800px){
+
+}
+/* ===== BAGIAN RESPONSIVE STYLING MX-WIDTH 700PX ===== */
+@media screen and (max-width: 750px){
+
+}
+/* ===== BAGIAN RESPONSIVE STYLING MX-WIDTH 700PX ===== */
+@media screen and (max-width: 700px){
+
+}
+/* ===== BAGIAN RESPONSIVE STYLING MX-WIDTH 500PX ===== */
+@media screen and (max-width: 500px) {
+
+  /* === BAGIAN HOME RESPONSIVE === */
+  .intro {
+    justify-content: center;
+    margin: 0px 20px;
+  }
+
+  .intro h1 {
+    font-size: 40px;
+  }
+
+  .intro h2 {
+    font-size: 26px;
+  }
+
+  .clouds img {
+    height: 200px;
+    width: 100%;
+  }
+
+  /* === BAGIAN LINE TRANSITION RESPONSIVE === */
+  .line-appearance1 {
+    display: none;
+  }
+
+  .line-appearance-res1 {
+    position: relative;
+    width: 160px;
+    height: 3px;
+    background: #fff;
+    bottom: 70px;
+    left: 20px;
+  }
+
+  .line-appearance-res2 {
+    position: relative;
+    width: 3px;
+    height: 201px;
+    background: #fff;
+    bottom: 271px;
+    left: 180px;
+  }
+
+  .line-appearance-res3 {
+    position: relative;
+    width: 160px;
+    height: 3px;
+    background: #fff;
+    top: -475px;
+    right: -180px;
+  }
+
+  .line-transition-personality-res-center {
+    display: none;
+  }
+
+  .line-personality-res-up figure img,
+  .line-personality-res-down figure img {
+    display: block;
+    height: 100px;
+    margin-bottom: 7px;
+  }
+
+  .line-personality-res-down figure img {
+    display: block;
+    margin-top: 7px;
+    transform: rotateX(180deg);
+  }
+
+  /* === BAGIAN PERSONALITY RESPONSIVE === */
+  .card-personality {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .content-left-personality .content-text-personality {
+    margin: 0px;
+    font-size: 15px;
+  }
+
+  .content-left-personality {
+    height: 60vh;
+  }
+
+  .content-center-personality {
+    height: 95vh;
+  }
+
+  .content-center-personality,
+  .content-text-personality.left p,
+  .content-text-personality.right p {
+    font-size: 14px;
+    text-align: justify;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .content-right-personality {
+    height: 60vh;
+    margin: 0 20px 0 20px;
+  }
+
+  .content-right-personality .content-text-personality {
+    margin: 0px;
+    font-size: 15px;
+  }
+
+  /* === BAGIAN ABILITY RESPONSIVE === */
+  .main-line-ability {
+    display: none;
+  }
+
+  .content-skills {
+    margin-top: 90px;
+  }
+
+  .content-skills,
+  .content-shadow-monarch,
+  .content-titles,
+  .content-shadow-soldiers {
+    flex-direction: column;
+  }
+
+  .title-skills,
+  .title-titles {
+    margin-left: 0px;
+    margin-right: 0%;
+  }
+
+  .title-skills::before,
+  .title-titles::before,
+  .title-shadow-monarch::before,
+  .title-shadow-soldiers::before {
+    display: none;
+  }
+
+  .title-shadow-monarch,
+  .title-shadow-soldiers {
+    margin-right: 0px;
+    margin-left: 0%;
+  }
+
+  h3.title-skills,
+  h3.title-titles {
+    font-size: 40px;
+  }
+
+  h3.title-shadow-monarch,
+  h3.title-shadow-soldiers {
+    font-size: 30px;
+    position: absolute;
+  }
+
+  .sub-skills,
+  .sub-shadow-monarch,
+  .sub-titles,
+  .sub-shadow-soldiers {
+    margin-top: 30px;
+  }
+
+  .sub-skills,
+  .sub-titles,
+  .sub-shadow-monarch ul li {
+    text-align: left;
+  }
+
+  h4.title-sub-skills {
+    margin-left: 10px;
+  }
+
+  b.title-sub-shadow-monarch {
+    margin-left: 10px;
+  }
+
+  .sub-shadow-monarch ul {
+    margin-top: 30px;
+  }
+
+  .sub-shadow-soldiers ul {
+    margin-top: 30px;
+  }
+
+  .sub-shadow-soldiers ul li {
+    text-align: left;
+    margin: 0px 10px;
+  }
+}
