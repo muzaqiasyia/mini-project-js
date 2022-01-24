@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #fff;
+  font-family: sans-serif;
+}
+
+td {
+  border: 2px solid #24252b;
+  height: 170px;
+  width: 170px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+table tr:first-child td {
+  border-top: 0;
+}
+
+table tr:last-child td {
+  border-bottom: 0;
+}
+
+table tr td:first-child {
+  border-left: 0;
+}
+
+table tr td:last-child {
+  border-right: 0;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px 30px;
+  background: #366fa3;
+  cursor: pointer;
+  color: #fff;
+}
+
+h1 {
+  color: #223238;
+  text-align: center;
+  margin: 20px;
+}
+
+.endgame {
+  display: none;
+  position: absolute;
+  width: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 60px 0;
+  font-size: 2em;
+  background-color: rgba(222, 124, 29, 0.8);
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+}
+
+@media screen and (max-width: 450px) {
+  td {
+    width: 95px;
+    height: 95px;
+    font-size: 30px;
+  }
+
+  button {
+    padding: 5px 10px;
+    margin-left: 10px;
+  }
+
+  .endgame {
+    padding: 20px 0;
+  }
+}
